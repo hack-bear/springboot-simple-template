@@ -19,7 +19,7 @@ public class HomeController {
 
 	@RequestMapping(value = "/add/book", method = { RequestMethod.POST }, produces = {MediaType.APPLICATION_JSON_VALUE })
 	@ResponseBody
-	public Map<String, Integer> querySomeJSON(@RequestBody Book book) {
+	public Map<String, Integer> addBook(@RequestBody Book book) {
 		Map result = new HashMap<>();
 		Integer bookId = bookManager.addBook(book);
 		result.put("bookId",bookId);
