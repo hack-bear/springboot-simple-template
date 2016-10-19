@@ -50,16 +50,16 @@ fi
 JAVA_JMX="-Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.port=7849 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false"
 
 if [ "$1" = "debug" ]; then
-    java $JAVA_OPTS $JAVA_MEM_OPTS $JAVA_DEBUG_OPTS    -Dloader.path=$deployDir/config,$deployDir/lib -jar $deployDir/lib/invoice-title-*.jar
+    java $JAVA_OPTS $JAVA_MEM_OPTS $JAVA_DEBUG_OPTS    -Dloader.path=$deployDir/config,$deployDir/lib -jar $deployDir/lib/mycustommodule-*.jar
 
 elif [ "$1" = "b" ];then
-    nohup java $JAVA_OPTS $JAVA_MEM_OPTS    -Dloader.path=$deployDir/config,$deployDir/lib -jar $deployDir/lib/invoice-title-*.jar  > stdout.xml.log 2>&1 &
+    nohup java $JAVA_OPTS $JAVA_MEM_OPTS    -Dloader.path=$deployDir/config,$deployDir/lib -jar $deployDir/lib/mycustommodule-*.jar  > stdout.xml.log 2>&1 &
 
 elif [ "$1" = "jmx" ];then
-    nohup java  $JAVA_JMX $JAVA_OPTS $JAVA_MEM_OPTS    -Dloader.path=$deployDir/config,$deployDir/lib -jar $deployDir/lib/invoice-title-*.jar  > stdout.xml.log 2>&1 &
+    nohup java  $JAVA_JMX $JAVA_OPTS $JAVA_MEM_OPTS    -Dloader.path=$deployDir/config,$deployDir/lib -jar $deployDir/lib/mycustommodule-*.jar  > stdout.xml.log 2>&1 &
 
 else
-    exec java $JAVA_OPTS $JAVA_MEM_OPTS    -Dloader.path=$deployDir/config,$deployDir/lib -jar $deployDir/lib/invoice-title-*.jar
+    exec java $JAVA_OPTS $JAVA_MEM_OPTS    -Dloader.path=$deployDir/config,$deployDir/lib -jar $deployDir/lib/mycustommodule-*.jar
 fi
 
 
